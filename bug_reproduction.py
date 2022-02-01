@@ -1,8 +1,13 @@
 from sqlalchemy import Column, DateTime, String, func
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import registry
 
+# SQLAlchemy 1.4 style
 mapper_registry = registry()
 Base = mapper_registry.generate_base()
+
+# SQLAlchemy 1.3 style
+# Base = declarative_base()
 
 
 class MyMixin:
